@@ -49,12 +49,6 @@
                 <version>2.3</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml> 
-<!--                    <webResources>
-                      <resource>
-                         this is relative to the pom.xml directory 
-                        <directory>src/main/java/resources</directory>
-                      </resource>
-                    </webResources> -->
                 </configuration>
             </plugin>
             <plugin>
