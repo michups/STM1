@@ -85,7 +85,10 @@ public class NewWebService {
             @WebParam(name = "longitude2")  Float longitude2, @WebParam(name = "latitude2") Float latitude2) {
        String base64Image = "";
        /*TODO zabezpieczenia*/
-       
+        System.out.println("longitude1:"+longitude1);
+        System.out.println("latitude1:"+latitude1);
+        System.out.println("longitude2:"+longitude2);
+        System.out.println("latitude2:"+latitude2);
        
 	ClassLoader classLoader = getClass().getClassLoader();  
         BufferedImage cuttedImage = null;
@@ -107,18 +110,22 @@ public class NewWebService {
         } catch (IOException ex) {
             Logger.getLogger(NewWebService.class.getName()).log(Level.SEVERE, null, ex);
         }  
-        
+        System.out.println(base64Image);
 	return base64Image;
     }
     
     
     private BufferedImage cutImage(Image src, float longitude1, float latitude1, float longitude2, float latitude2) throws IOException{
         int x = Math.round(((longitude1-longtitudeMIN)/longtitudeSize)*1000f); 
-        int y = Math.round(((latitude2-latitudeMIN)/latitudeSize)*1000f);  
+        int y = Math.round(((latitude1-latitudeMIN)/latitudeSize)*1000f);  
         int w = Math.abs(Math.round(((longitude2-longitude1)/longtitudeSize)*1000f)); 
         int h =  Math.abs(Math.round(((latitude2-latitude1)/latitudeSize)*1000f));
         w=Math.abs(w);
         h=Math.abs(h);
+        System.out.println("x"+x);
+        System.out.println("y"+y);
+        System.out.println("w"+w);
+        System.out.println("h"+h);
         BufferedImage dest = ((BufferedImage)src).getSubimage(x, y, w, h);
 //        BufferedImage dst = new BufferedImage(w, h, BufferedImage.TYPE_INT_BGR);
 //        Graphics g = dst.getGraphics();
