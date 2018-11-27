@@ -23,10 +23,10 @@ public class SoapCaller {
     {
 
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
-        request.addProperty("longitude1", longtitudeMIN.toString());
-        request.addProperty("latitude1", latitudeMIN.toString());
-        request.addProperty("longitude2", longtitudeMAX.toString());
-        request.addProperty("latitude2", latitudeMAX.toString());
+        request.addProperty("longitude1",x1);
+        request.addProperty("latitude1", y1);
+        request.addProperty("longitude2", x2);
+        request.addProperty("latitude2", y2);
 
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 

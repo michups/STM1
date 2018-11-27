@@ -55,8 +55,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
         }
         System.out.println("AAAAAAAAAAAAA"+imageInString);
         // Capture the layout's TextView and set the string as its text
-        TextView textView = findViewById(R.id.textView);
-        textView.setText(imageInString);
+//        TextView textView = findViewById(R.id.textView);
+//        textView.setText(imageInString);
     }
 
 
